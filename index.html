@@ -1,0 +1,57 @@
+<meta charset="utf-8">
+<title>Topo Trainer: De Wereld</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="style.css">
+
+<div id="app">
+  <header class="top">
+    <div class="brand"><span class="logo"><img alt="Meester Roy" src="logo-icon.jpg"></span><span class="t"><span class="n">Topo Trainer: De Wereld</span><span class="by">Meester Roy</span></span></div>
+    <nav class="modes" id="modes" aria-label="Leermodus">
+      <button data-mode="verkennen" aria-pressed="true">Verkennen</button>
+      <button data-mode="oefenen" aria-pressed="false">Oefenen</button>
+      <button data-mode="toets" aria-pressed="false">Toets</button>
+      <button data-mode="kaart" aria-pressed="false">Mijn kaart</button>
+    </nav>
+    <nav class="modes views" id="views" aria-label="Kaartweergave">
+      <button data-view="globe" aria-pressed="true"><span class="long">3D-bol</span><span class="short">3D</span></button>
+      <button data-view="flat" aria-pressed="false"><span class="long">Platte kaart</span><span class="short">Plat</span></button>
+    </nav>
+  </header>
+  <aside class="rail" id="rail" aria-label="Filter op categorie"></aside>
+  <main class="stage" id="stage">
+    <canvas id="globe" aria-label="Wereldbol. Sleep om te draaien, knijp of scroll om te zoomen."></canvas>
+    <div class="card prompt" id="prompt" hidden></div>
+    <div class="card info" id="info" hidden></div>
+    <div class="card center" id="center" hidden></div>
+    <div class="zoom">
+      <button id="zin" aria-label="Inzoomen">+</button>
+      <button id="zout" aria-label="Uitzoomen">&minus;</button>
+      <button id="zhome" aria-label="Terug naar beginpositie"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7M6 10v10h12V10"/></svg></button>
+    </div>
+    <div class="toast" id="toast" hidden></div>
+  </main>
+  <footer class="foot"><div><b>Meester Roy</b> &middot; Topo Trainer: De Wereld</div><span>Leren met plezier, stap voor stap</span></footer>
+</div>
+<div id="splash" role="presentation"><div class="sp"><img alt="Meester Roy" src="logo-full.jpg"><div class="sp2">Topo Trainer: De Wereld</div><div class="sp3">Tik om te starten</div></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="w0.js"></script>
+<script src="w1.js"></script>
+<script src="w2.js"></script>
+<script src="w3.js"></script>
+<script src="w4.js"></script>
+<script src="w5.js"></script>
+<script src="w6.js"></script>
+<script src="w7.js"></script>
+<script src="w8.js"></script>
+<script src="w9.js"></script>
+<script src="w10.js"></script>
+<script src="w11.js"></script>
+<script src="w12.js"></script>
+<script src="w13.js"></script>
+<script>window.WORLD=JSON.parse(window.WP);delete window.WP;</script>
+<script src="geo.js"></script>
+
+<script src="app.js"></script>
