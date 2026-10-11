@@ -110,7 +110,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .foot b{color:#fff}.foot span{color:#7DD3FC}
 @media (min-width:900px) and (min-height:760px){.foot{display:flex}}
 /* openingsscherm */
-#splash{position:fixed;inset:0;z-index:50;background:#fff;display:grid;place-items:center;cursor:pointer;transition:opacity .6s ease,visibility .6s}
+#splash{position:fixed;inset:0;z-index:50;background:#fff;display:grid;place-items:center;transition:opacity .6s ease,visibility .6s}
 #splash.out{opacity:0;visibility:hidden}
 #splash .sp{display:grid;justify-items:center;gap:14px;text-align:center;padding:20px}
 #splash img{width:min(260px,62vw);height:auto;animation:rise .8s cubic-bezier(.2,.8,.2,1) both}

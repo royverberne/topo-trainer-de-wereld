@@ -1,5 +1,5 @@
 
-(function(){var sp=document.getElementById('splash');if(!sp)return;function out(){sp.classList.add('out');setTimeout(function(){sp.remove();},700);}sp.addEventListener('click',out);setTimeout(out,1800);})();
+(function(){var sp=document.getElementById('splash');if(!sp)return;function out(){sp.classList.add('out');setTimeout(function(){sp.remove();},700);}setTimeout(out,3000);})();
 (function(){
 'use strict';
 var G0=window.GEO, RAD=G0.RAD, ITEMS=G0.ITEMS, byId=G0.byId;
