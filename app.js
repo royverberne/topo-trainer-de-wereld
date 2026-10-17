@@ -623,3 +623,8 @@ loadP(); renderRail(); layout(); showInfoDefault();
 if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){dirty=true;});
 requestAnimationFrame(frame);
 })();
+
+(function(){var mq=window.matchMedia('(orientation:portrait) and (max-width:1100px)');
+function place(){var v=document.getElementById('views'),z=document.querySelector('.zoom'),t=document.querySelector('.top'),m=document.getElementById('modes');if(!v||!z||!t||!m)return;
+if(mq.matches){if(v.parentNode!==z)z.insertBefore(v,z.firstChild);}else if(v.parentNode!==t){t.insertBefore(v,m.nextSibling);}}
+if(mq.addEventListener)mq.addEventListener('change',place);else mq.addListener(place);place();})();
