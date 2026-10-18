@@ -1,4 +1,3 @@
-
 /* Huisstijl Meester Roy (app-stijl): marine, staalblauw, cyaan; oranje voor de hoofdactie. */
 :root{
   --navy:#143057; --blauw:#2b6c9e; --cyaan:#4cb8de; --accent:#2b6c9e; --blue:#16577f;
@@ -37,11 +36,11 @@ button{font:inherit;color:inherit;cursor:pointer}
 .brand{display:flex;align-items:center;gap:12px;color:#fff}
 .logo{background:#fff;border-radius:var(--r);padding:4px 8px;display:grid;place-items:center;box-shadow:0 2px 10px rgba(0,0,0,.2)}
 .logo img{height:44px;width:auto;display:block}
-.emb{width:54px;height:54px;flex:none;display:block;filter:drop-shadow(0 2px 6px rgba(0,0,0,.3))}
+.emb{width:clamp(56px,11vw,76px);height:clamp(56px,11vw,76px);flex:none;display:block;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px rgba(255,255,255,.7),0 4px 12px rgba(0,0,0,.18)}
 .icoon-badge{margin-left:auto;flex:none;width:56px;height:56px;display:grid;place-items:center}
 .icoon-badge img{width:50px;height:auto;display:block;filter:drop-shadow(0 0 1.5px rgba(255,255,255,.95)) drop-shadow(0 0 6px rgba(255,255,255,.35))}
 .brand .t{display:grid;gap:2px;min-width:0}
-.brand .n{font:900 clamp(1.3rem,2.4vw,1.6rem)/1.1 "Nunito","Trebuchet MS","Segoe UI",Arial,sans-serif;letter-spacing:0}
+.brand .n{font:900 clamp(1.5rem,4.4vw,2.3rem)/1.15 "Nunito","Trebuchet MS","Segoe UI",Arial,sans-serif;letter-spacing:0}
 .brand .by{font:800 .95rem/1.2 "Nunito","Trebuchet MS","Segoe UI",Arial,sans-serif;color:#fff;opacity:.92}
 .modes{display:flex;gap:4px;background:rgba(20,48,87,.55);border:1px solid rgba(255,255,255,.16);padding:4px;border-radius:var(--r2);margin-inline:auto}
 .modes button{border:0;background:transparent;padding:10px 18px;min-height:48px;border-radius:var(--r);font-weight:800;color:#dbe8f3;transition:background .15s,color .15s}
@@ -138,7 +137,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 #splash.out{opacity:0;visibility:hidden}
 #splash .sp{display:grid;justify-items:center;gap:14px;text-align:center;padding:20px}
 #splash img{width:min(260px,62vw);height:auto;animation:rise .8s cubic-bezier(.2,.8,.2,1) both}
-#splash img.spe{width:min(132px,34vw);margin-bottom:4px}
+#splash img.spe{width:104px;height:104px;border-radius:50%;box-shadow:0 8px 24px rgba(20,48,87,.22);margin-bottom:4px}
 #splash .sp2{font:800 clamp(26px,6vw,36px)/1 var(--display);color:#143057;letter-spacing:-.02em}
 #splash .sp4{font-weight:700;color:#4a6178;font-size:15px;letter-spacing:.04em;margin-top:6px}
 #splash .sp3{margin-top:10px;font-weight:700;color:var(--accent);font-size:13px;letter-spacing:.14em;text-transform:uppercase}
@@ -167,7 +166,7 @@ button{font:inherit;color:inherit;cursor:pointer}
   .brand{gap:8px}
   .logo{padding:3px 6px;border-radius:10px}
   .logo img{height:26px}
-  .emb{width:40px;height:40px}
+  .emb{width:48px;height:48px}
   .icoon-badge{width:44px;height:44px}
   .icoon-badge img{width:42px}
   .brand .by{display:none}
@@ -207,12 +206,12 @@ button{font:inherit;color:inherit;cursor:pointer}
 /* App-weergave (staand): grotere vraag, tegels en knoppen voor makkelijk tikken */
 @media (orientation:portrait) and (max-width:1100px){
   #app{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto minmax(0,1fr);grid-template-areas:"top" "rail" "stage"}
-  .voet-rail{display:none}
+  .voet-rail,.foot{display:none!important}
   .top{padding:10px 14px;gap:10px}
-  .brand{flex:1 1 auto;min-width:0;gap:10px}
-  .brand .n{font-size:clamp(17px,4.6vw,28px);white-space:nowrap}
-  .brand .by{display:block;font-size:clamp(12px,3vw,16px)}
-  .emb{width:48px;height:48px}
+  .brand{flex:1 1 0;min-width:0;gap:10px}
+  .brand .n{font-size:clamp(1.15rem,5vw,1.8rem);white-space:nowrap}
+  .brand .by{display:block;font-size:.95rem}
+  .emb{width:58px;height:58px}
   .icoon-badge{width:52px;height:52px}.icoon-badge img{width:48px}
   .views{order:2;margin-left:auto;padding:4px}
   .views button{min-height:44px;padding:6px 14px;font-size:15px}
@@ -243,6 +242,7 @@ button{font:inherit;color:inherit;cursor:pointer}
   .big{font-size:56px}
 }
 @media (orientation:portrait) and (max-width:560px){
+  .brand .by{display:none}
   .prompt{grid-template-columns:minmax(0,1fr);grid-template-areas:"row" "q" "acts" "bar" "fb"}
   .prompt .acts{width:100%}.prompt .acts .btn{flex:1}
   .prompt .btn.sm{min-height:48px}
@@ -262,5 +262,6 @@ button{font:inherit;color:inherit;cursor:pointer}
 .zoom .views::before{left:3px;right:3px;width:auto;top:3px;bottom:auto;height:calc(50% - 3px)}
 .zoom .views:has(button:last-child[aria-pressed="true"])::before{transform:translateY(100%)}
 .zoom .views button{min-width:0;width:100%;min-height:44px;padding:4px 0;font-size:14px;font-weight:800;border-radius:12px}
+@media (orientation:portrait) and (max-width:400px){.emb{width:52px;height:52px}.brand{gap:8px}.brand .n{font-size:1.15rem}.icoon-badge{width:42px;height:42px}.icoon-badge img{width:40px}}
 @media (orientation:portrait) and (max-width:560px){.zoom .views{width:50px}.zoom .views button{min-height:40px;font-size:13px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
