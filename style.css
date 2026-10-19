@@ -136,9 +136,9 @@ button{font:inherit;color:inherit;cursor:pointer}
 #splash{position:fixed;inset:0;z-index:50;background:#fff;display:grid;place-items:center;transition:opacity .6s ease,visibility .6s}
 #splash.out{opacity:0;visibility:hidden}
 #splash .sp{display:grid;justify-items:center;gap:14px;text-align:center;padding:20px}
-#splash img{width:min(260px,62vw);height:auto;animation:rise .8s cubic-bezier(.2,.8,.2,1) both}
+#splash img{width:min(130px,31vw);height:auto;animation:rise .8s cubic-bezier(.2,.8,.2,1) both}
 #splash img.spe{width:104px;height:104px;border-radius:50%;box-shadow:0 8px 24px rgba(20,48,87,.22);margin-bottom:4px}
-#splash .sp2{font:800 clamp(26px,6vw,36px)/1 var(--display);color:#143057;letter-spacing:-.02em}
+#splash .sp2{font:900 clamp(30px,7vw,42px)/1 var(--font,"Nunito","Trebuchet MS","Segoe UI",Arial,sans-serif);color:#143057;text-wrap:balance}
 #splash .sp4{font-weight:700;color:#4a6178;font-size:15px;letter-spacing:.04em;margin-top:6px}
 #splash .sp3{margin-top:10px;font-weight:700;color:var(--accent);font-size:13px;letter-spacing:.14em;text-transform:uppercase}
 @keyframes rise{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:none}}
