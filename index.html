@@ -31,10 +31,8 @@
       <button data-mode="toets" aria-pressed="false">Toets</button>
       <button data-mode="kaart" aria-pressed="false">Mijn kaart</button>
     </nav>
-    <nav class="modes views" id="views" aria-label="Kaartweergave">
-      <button data-view="globe" aria-pressed="true">3D</button>
-      <button data-view="flat" aria-pressed="false">Kaart</button>
-    </nav>
+    <span class="brk"></span>
+    <button class="dlbtn" id="dlbtn" type="button" aria-label="Download studieblad en werkblad"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7.5 11l4.5 4.5 4.5-4.5M5 19.5h14"/></svg><span>Download</span></button>
     <span class="icoon-badge"><img alt="Meester Roy" src="logo-icoon.webp"></span>
   </header>
   <aside class="rail" id="rail" aria-label="Filter op categorie"></aside>
@@ -45,10 +43,30 @@
     <div class="card info" id="info" hidden></div>
     <div class="card center" id="center" hidden></div>
     <div class="zoom">
+      <nav class="modes views" id="views" aria-label="Kaartweergave">
+      <button data-view="globe" aria-pressed="true">3D</button>
+      <button data-view="flat" aria-pressed="false">Kaart</button>
+    </nav>
       <button id="zin" aria-label="Inzoomen">+</button>
       <button id="zout" aria-label="Uitzoomen">&minus;</button>
       <button id="zhome" aria-label="Terug naar beginpositie"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7M6 10v10h12V10"/></svg></button>
     </div>
+    <div class="dl" id="dlview" hidden>
+      <div class="dl-in"><div class="dl-kop"><h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6"/></svg>Studieblad en werkblad</h2><button class="dl-terug" id="dlterug" type="button">Terug naar de kaart</button></div>
+      <div class="dl-grid">
+      <section class="dl-item" data-doc="studieblad">
+        <div class="dl-prev"><img alt="Voorbeeld van het studieblad" src="studieblad-preview.webp"></div>
+        <div class="dl-info"><h3>Studieblad</h3><p>Alle 20 begrippen op één A4: de kaart met nummers en bij elk begrip uitleg. Handig om mee te studeren, op papier of op het scherm.</p>
+          <div class="dl-acts"><a class="dlbtn" data-open href="studieblad.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6"/></svg><span>Openen en afdrukken</span></a>
+          <a class="dl-sec" data-save href="studieblad.pdf" download="Topo-Trainer-studieblad.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7.5 11l4.5 4.5 4.5-4.5M5 19.5h14"/></svg>Downloaden</a></div>
+          <div class="dl-hint">Het blad opent in een nieuw tabblad. Daar druk je het af met de printknop van je browser.</div></div></section>
+      <section class="dl-item" data-doc="werkblad">
+        <div class="dl-prev"><img alt="Voorbeeld van het werkblad" src="werkblad-preview.webp"></div>
+        <div class="dl-info"><h3>Werkblad</h3><p>Een kaart met 20 nummers. Schrijf de namen op de lijnen en controleer met je studieblad.</p>
+          <div class="dl-acts"><a class="dlbtn" data-open href="werkblad.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6"/></svg><span>Openen en afdrukken</span></a>
+          <a class="dl-sec" data-save href="werkblad.pdf" download="Topo-Trainer-werkblad.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7.5 11l4.5 4.5 4.5-4.5M5 19.5h14"/></svg>Downloaden</a></div>
+          <div class="dl-hint">Het blad opent in een nieuw tabblad. Daar druk je het af met de printknop van je browser.</div></div></section>
+      </div></div></div>
     <div class="toast" id="toast" hidden></div>
   </main>
   <footer class="foot"><div><b>Meester Roy</b> &middot; Topo Trainer: De Wereld</div><span>Leren met plezier, stap voor stap</span></footer>

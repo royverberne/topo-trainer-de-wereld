@@ -624,7 +624,12 @@ if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){di
 requestAnimationFrame(frame);
 })();
 
-(function(){var mq=window.matchMedia('(orientation:portrait) and (max-width:1100px)');
-function place(){var v=document.getElementById('views'),z=document.querySelector('.zoom'),t=document.querySelector('.top'),m=document.getElementById('modes');if(!v||!z||!t||!m)return;
-if(mq.matches){if(v.parentNode!==z)z.insertBefore(v,z.firstChild);}else if(v.parentNode!==t){t.insertBefore(v,m.nextSibling);}}
-if(mq.addEventListener)mq.addEventListener('change',place);else mq.addListener(place);place();})();
+(function(){var dl=document.getElementById('dlview'),b=document.getElementById('dlbtn');if(!dl||!b)return;
+function open(){dl.hidden=false;dl.scrollTop=0;}function close(){dl.hidden=true;}
+b.addEventListener('click',open);document.getElementById('dlterug').addEventListener('click',close);
+document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('#modes button,#views button'))close();},true);
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!dl.hidden)close();});
+[].forEach.call(dl.querySelectorAll('.dl-item'),function(it){var k=it.getAttribute('data-doc'),s=document.getElementById('pdf-'+k);if(!s)return;
+try{var bin=atob(s.textContent.trim()),a=new Uint8Array(bin.length);for(var i=0;i<bin.length;i++)a[i]=bin.charCodeAt(i);
+var u=URL.createObjectURL(new Blob([a],{type:'application/pdf'}));[].forEach.call(it.querySelectorAll('a'),function(x){x.href=u;});}catch(e){}});
+})();
